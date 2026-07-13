@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="MusicFlow.Api/MusicFlow.Api.csproj" Id="03375f18-8462-400d-9a9d-7ffb9ed624c8" />
+  <Project Path="MusicFlow.Application/MusicFlow.Application.csproj" />
+  <Project Path="MusicFlow.Domain/MusicFlow.Domain.csproj" />
+  <Project Path="MusicFlow.Infrastructure/MusicFlow.Infrastructure.csproj" />
+  <Project Path="MusicFlow.Persistence/MusicFlow.Persistence.csproj" />
+  <Project Path="MusicFlow.Test/MusicFlow.Test.csproj" />
+</Solution>
