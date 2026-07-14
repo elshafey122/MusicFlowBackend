@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MusicFlow.Api\MusicFlow.Api.csproj" />
     <ProjectReference Include="..\MusicFlow.Application\MusicFlow.Application.csproj" />
     <ProjectReference Include="..\MusicFlow.Domain\MusicFlow.Domain.csproj" />
-    <ProjectReference Include="..\MusicFlow\MusicFlow.Api.csproj" />
 	<PackageReference Include="FluentAssertions" Version="8.10.0" />
 	<PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.7.0" />
 	<PackageReference Include="Moq" Version="4.20.72" />

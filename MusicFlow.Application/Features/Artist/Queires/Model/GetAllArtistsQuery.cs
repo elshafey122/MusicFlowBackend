@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using MusicFlow.Application.Features.Artist.Dto;
+using MusicFlow.Application.Dto;
 using MusicFlow.Domain.Entites;
 using System;
 using System.Collections.Generic;

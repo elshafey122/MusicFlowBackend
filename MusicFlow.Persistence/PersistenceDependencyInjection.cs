@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MusicFlow.Application.Interfaces;
 using MusicFlow.Persistence.IRepositories;
 using MusicFlow.Persistence.Repositories;
+using MusicFlow.Persistence.Services;
 using ProductService.Persistence;
 using ProductService.Persistence.IRepositories;
 using ProductService.Persistence.Repositories;
@@ -19,7 +21,7 @@ namespace ProductService.Infrastructure
             var connection = configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
 
-            //services.AddScoped<IProductServices, ProductServices>();
+            services.AddScoped<IArtistService, ArtistService>();
             services.AddScoped(typeof(IRepositroy<>), typeof(Repository<>));
             services.AddScoped<ITrackRepository, TrackRepository>();
             services.AddScoped<IArtistRepository, ArtistRepository>();
