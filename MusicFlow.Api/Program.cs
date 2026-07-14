@@ -1,4 +1,7 @@
 
+using Microsoft.AspNetCore.Builder;
+using ProductService.Infrastructure;
+
 namespace MusicFlow.Api
 {
     public class Program
@@ -11,15 +14,16 @@ namespace MusicFlow.Api
 
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-            builder.Services.AddOpenApi();
+            //builder.Services.AddOpenApi();
+            PersistenceDependencyInjection.AddPersistenceDI(builder.Services,builder.Configuration);
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.MapOpenApi();
-            }
+            //if (app.Environment.IsDevelopment())
+            //{
+            //    app.MapOpenApi();
+            //}
 
             app.UseHttpsRedirection();
 

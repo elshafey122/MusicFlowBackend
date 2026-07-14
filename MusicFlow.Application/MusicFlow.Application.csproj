@@ -14,11 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\" />
-    <Folder Include="Handler\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Pagination\" />
-    <Folder Include="Queires\" />
+    <Folder Include="Features\Track\Commands\Handler\" />
+    <Folder Include="Features\Track\Commands\Model\" />
+    <Folder Include="Features\Track\Queires\Handler\" />
+    <Folder Include="Features\Track\Queires\Model\" />
     <Folder Include="Validation\" />
   </ItemGroup>
 
