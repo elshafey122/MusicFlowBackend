@@ -26,7 +26,7 @@ namespace MusicFlow.Api.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> CreateArtist([FromBody] CreateArtistCommand createArtistCommand)
         {

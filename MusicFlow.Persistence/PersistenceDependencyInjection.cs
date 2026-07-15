@@ -22,9 +22,14 @@ namespace ProductService.Infrastructure
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
 
             services.AddScoped<IArtistService, ArtistService>();
+            services.AddScoped<ITrackService, TrackService>();
             services.AddScoped(typeof(IRepositroy<>), typeof(Repository<>));
             services.AddScoped<ITrackRepository, TrackRepository>();
             services.AddScoped<IArtistRepository, ArtistRepository>();
+            services.AddScoped<IDspRepository, DspRepository>();
+            services.AddScoped<ITrackDistRepository, TrackDistRepository>();
+
+
 
 
             return services;
