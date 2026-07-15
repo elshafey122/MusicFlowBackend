@@ -1,10 +1,11 @@
-﻿using System;
+﻿using MusicFlow.Domain.Entites;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace MusicFlow.Application.Dto
 {
-    public class TrackDto
+    public class TrackDspsDto
     {
         public Guid Id { get; set; }
         public Guid ArtistId { get; set; }
@@ -13,5 +14,6 @@ namespace MusicFlow.Application.Dto
         public DateOnly ReleaseDate { get; set; }
         public string Genre { get; set; }
         public string Status { get; set; }
+        public List<DspDto> Dsps { get; set; }     
     }
 }
