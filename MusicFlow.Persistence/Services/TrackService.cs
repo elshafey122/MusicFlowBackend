@@ -103,12 +103,12 @@ namespace MusicFlow.Persistence.Services
                     tracks = tracks.Where(t => t.Status ==  statusout);
                 }
             }
-            return await tracks.ToListAsync();
+            return await tracks.Include(x=>x.Artist).ToListAsync();
         }
 
         public async Task<Track> GetTrackAsync(string trackId)
         {
-            var track = await _trackRepository.GetTableNoTracking().Include(x=>x.TrackDistributions).ThenInclude(x=>x.Dsp).FirstOrDefaultAsync(a => a.Id == Guid.Parse(trackId));
+            var track = await _trackRepository.GetTableNoTracking().Include(x=>x.Artist).Include(x=>x.TrackDistributions).ThenInclude(x=>x.Dsp).FirstOrDefaultAsync(a => a.Id == Guid.Parse(trackId));
             return track;
         }
 

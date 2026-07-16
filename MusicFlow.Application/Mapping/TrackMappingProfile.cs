@@ -15,7 +15,9 @@ namespace ProductService.Application.Mapping
     {
         public TrackMappingProfile()
         {
-            CreateMap<Track, TrackDto>().ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
+            CreateMap<Track, TrackDto>().ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()))
+                                        .ForMember(des=>des.ArtistName,opt=>opt.MapFrom(src=>src.Artist.Name));
+
             CreateMap<TrackDto, Track>().ForMember(dest => dest.Status, opt => opt.MapFrom(src => Enum.Parse<TrackStatus>(src.Status, true)));
 
 
@@ -25,7 +27,8 @@ namespace ProductService.Application.Mapping
                                                   .ForMember(des => des.DspName, opt => opt.MapFrom(src => src.Dsp.Name))
                                                   .ForMember(des => des.DspId, opt => opt.MapFrom(src => src.Dsp.Id));
 
-            CreateMap<Track, TrackDspsDto>().ForMember(des => des.Dsps, opt => opt.MapFrom(src => src.TrackDistributions));
+            CreateMap<Track, TrackDspsDto>().ForMember(des => des.Dsps, opt => opt.MapFrom(src => src.TrackDistributions))
+                                            .ForMember(des=>des.ArtistName,opt=>opt.MapFrom(src=>src.Artist.Name));
         }
     }
 }
