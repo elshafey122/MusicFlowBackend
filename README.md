@@ -29,7 +29,7 @@ Make sure you have installed:
 
 ```bash
 git clone <repository-url>
-cd MusicDistributionAPI
+cd MusicFlowBackend
 ```
 
 ---
