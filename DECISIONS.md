@@ -2,43 +2,56 @@
 
 ## 1. What did AI generate for you, and what did you write or modify yourself?
 
-I used ChatGPT and claude as an assistant during development, primarily for:
+I used ChatGPT and Claude as development assistants throughout the project. They helped me generate initial code, explain framework behavior, troubleshoot issues, and improve documentation. All AI-generated code was reviewed, tested, and modified before being integrated into the project.
+
+### AI-assisted work
 
 - Converting C# DTOs into TypeScript interfaces.
-- Answering Angular syntax questions related to Signals and the new control flow (`@for`, `@if`).
-- helps me in HTML and CSS layouts for the Track List and Track Details pages.
+- Explaining Angular Signals and the new control flow syntax (`@if`, `@for`).
+- Assisting with HTML and CSS layouts for the Track List and Track Details pages.
 - Explaining framework-specific errors and suggesting possible fixes.
-- Providing guidance on Git, GitHub, and README documentation.
+- Providing guidance on Git, GitHub, and project documentation (README.md).
 
-The application architecture, business logic, and implementation were completed by me, including:
+### Implemented and modified by me
 
-- Clean Architecture project structure.
-- Entity Framework Core configuration and migrations.
-- Repository and service implementations.
-- Track filtering logic.
-- JWT authentication and authorization.
-- API endpoints.
-- Input validation.
-- Angular services, routing, and component integration.
-- Debugging and integrating the generated code into the project.
+#### Backend
 
-I reviewed and modified AI-generated code before using it in the project.
+- Designed and implemented the Clean Architecture project structure.
+- Configured Entity Framework Core and created database migrations.
+- Implemented repositories, services, and business logic.
+- Developed the required API endpoints.
+- Implemented JWT authentication and authorization.
+- Added input validation and meaningful error responses.
+- Seeded the database with artists, tracks, DSPs, and users.
+- Integrated and tested all backend components.
+
+#### Frontend
+
+- Implemented Angular routing.
+- Developed the Register and Login pages.
+- Integrated JWT authentication with the backend.
+- Implemented Angular services for API communication.
+- Built the Track List and Track Details pages.
+- Added filtering by track status.
+- Connected frontend components with backend endpoints.
+- Debugged and integrated AI-generated suggestions into the final application.
+
+Although AI accelerated development, I reviewed every generated suggestion, modified it where necessary, and ensured it matched the project's requirements before using it.
 
 ---
 
 ## 2. What security issues did you find (or introduce) in the AI-generated code? How did you handle them?
 
-During development I reviewed AI-generated suggestions before applying them.
+During development, I reviewed AI-generated code before integrating it into the project.
 
-Some issues I considered included:
+While reviewing the generated code, I verified that:
 
-- Ensuring JWT-protected endpoints require authentication instead of leaving sensitive operations public.
-- Validating all user input on the server side rather than relying only on frontend validation.
-- Ensuring Entity Framework queries use parameterized SQL through LINQ to avoid SQL injection.
-- Returning appropriate error messages without exposing internal exception details.
-- Ensuring that protected API endpoints require JWT authentication instead of being publicly accessible.
+- Protected API endpoints required JWT authentication.
+- User input was validated on the backend instead of relying only on frontend validation.
+- Entity Framework Core LINQ queries were used instead of raw SQL, reducing the risk of SQL injection.
+- API responses did not expose unnecessary implementation details through exception messages.
 
-Any generated code that did not follow these practices was modified before being used.
+Whenever an AI-generated suggestion did not align with these security practices or the project's architecture, I modified it before using it.
 
 ---
 
@@ -60,4 +73,4 @@ I corrected the implementation by treating the route parameter as a string:
 this.trackId = this.route.snapshot.paramMap.get('id')!;
 ```
 
-This allowed the correct GUID to be passed to the backend API and fixed the issue when loading track details.
+This allowed the correct GUID to be passed to the backend API and fixed the issue when loading the track details.
