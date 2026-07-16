@@ -15,9 +15,10 @@ namespace ProductService.Application
         {
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-            services.AddAutoMapper(typeof(ArtistMappingProfile));
-            services.AddAutoMapper(typeof(TrackMappingProfile));
-
+            services.AddAutoMapper(cfg => {
+                cfg.AddProfile<ArtistMappingProfile>();
+                cfg.AddProfile<TrackMappingProfile>();
+            });
             return services;
         }
     }

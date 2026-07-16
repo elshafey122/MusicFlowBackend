@@ -13,12 +13,12 @@ using artist = MusicFlow.Domain.Entites.Artist;
 
 namespace MusicFlow.Application.Features.Artist.Commands.Handler
 {
-    public class ArtistCommandHandler : ResponseHandler, IRequestHandler<CreateArtistCommand, Response<ArtistDto>>
+    public class AuthCommandHandler : ResponseHandler, IRequestHandler<CreateArtistCommand, Response<ArtistDto>>
     {
         private readonly IArtistService _artistService;
         private readonly IValidator<CreateArtistCommand> _addartistvalidator;
         private readonly IMapper _mapper;
-        public ArtistCommandHandler(IArtistService artistService, IValidator<CreateArtistCommand> addartistvalidator,IMapper mapper)
+        public AuthCommandHandler(IArtistService artistService, IValidator<CreateArtistCommand> addartistvalidator,IMapper mapper)
         {
             _artistService = artistService;
             _addartistvalidator = addartistvalidator;
