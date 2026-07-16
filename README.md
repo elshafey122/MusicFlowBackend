@@ -18,7 +18,7 @@ A RESTful ASP.NET Core Web API for managing artists, tracks, and DSP (Digital Se
 
 Make sure you have installed:
 
-- .NET 8 SDK
+- .NET 10 SDK
 - SQL Server
 - Visual Studio 2022 (or VS Code)
 - Git
