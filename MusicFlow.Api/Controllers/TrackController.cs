@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MusicFlow.Api.Request;
@@ -43,6 +44,7 @@ namespace MusicFlow.Api.Controllers
             return Result(response);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPatch("{id}")]
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -57,16 +59,17 @@ namespace MusicFlow.Api.Controllers
             return Result(response);
         }
 
-
         [HttpPost]
         [ProducesResponseType(typeof(string), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateTrack([FromBody] CreateTrackCommand createTrackCommand)
         {
             var response = await _mediator.Send(createTrackCommand);
             return Result(response);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost("{id}/Distribute")]
         [ProducesResponseType(typeof(string), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
