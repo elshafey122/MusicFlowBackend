@@ -90,10 +90,9 @@ namespace MusicFlow.Api
             {
                 options.AddPolicy("AllowAll", policy =>
                 {
-                    policy
-                        .AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader();
+                    policy.WithOrigins("http://localhost:4200")
+                          .AllowAnyMethod()
+                          .AllowAnyHeader();
                 });
             });
             return services;
